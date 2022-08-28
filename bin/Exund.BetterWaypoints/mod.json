@@ -1,9 +1,0 @@
-﻿{
-    "Id": "Exund.BetterWaypoints",
-    "DisplayName": "Better Waypoints",
-    "Author": "Exund",
-    "Version": "1.0.0",
-    "Enable": true,
-    "AssemblyName": "Exund.BetterWaypoints.dll",
-    "EntryMethod": "Exund.BetterWaypoints.BetterWaypointsMod.Load"
-}

@@ -9,14 +9,26 @@ using UnityEngine.UI;
 
 namespace Exund.BetterWaypoints
 {
-    public class BetterWaypointsMod
+    public class BetterWaypointsMod : ModBase
     {
-        public static void Load()
-		{
-			var harmony = new Harmony("exund.betterwaypoints");
+        internal const string HarmonyID = "exund.betterwaypoints";
+        internal static Harmony harmony = new Harmony(HarmonyID);
+
+        public override bool HasEarlyInit()
+        {
+            return true;
+        }
+
+        public override void Init()
+        {
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
-	}
+
+        public override void DeInit()
+        {
+            harmony.UnpatchAll(HarmonyID);
+        }
+    }
 
     static class Patches
     {
